@@ -8,7 +8,8 @@ public class InputUtils {
 
     // 사용자로부터 경주에 참여할 자동차를 입력받고 저장
     public void getParticipants(Scanner scanner) {
-        String userInput = scanner.next();
+        String userInputRaw = scanner.nextLine();
+        String userInput=userInputRaw.replaceAll(" ","");
         String[] userInputArr = userInput.split(",");
         if(isUserInputDigitParticipants(userInput,scanner)){
             dataUtils.setNumberOfParticipant(userInputArr.length);
