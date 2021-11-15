@@ -36,8 +36,10 @@ public class Process {
     // 레이스를 시작하는 메서드
     void race(){
         System.out.println("실행 결과");
-        while(!result.finishRace)
+        for(int i=0;i<dataUtils.getTryTimes();i++)
             result.doRace();
+        result.getMaxPosition();
+        result.getWinner();
         printWinner();
     }
 

@@ -4,14 +4,13 @@ import utils.DataUtils;
 
 public class Result {
     DataUtils dataUtils=new DataUtils();
-    static boolean finishRace=false;
+    static int maxPosition;
     static String raceWinner="";
 
     // 레이스 시작 후 각 Car 객체를 움직이는 메서드
     public void doRace(){
         for(Car i:dataUtils.getParticipantArr()){
             i.checkAdvance();
-            checkRaceFinish(i);
         }
         printResult();
     }
@@ -24,17 +23,27 @@ public class Result {
         System.out.println("");
     }
 
-    // 승자가 나왔는지 확인 후, 나왔다면 승자를 최종 우승자에 저장하는 메서드
-    public void checkRaceFinish(Car car){
-        if(car.getFinish()){
-            finishRace=true;
-            if(raceWinner.equals("")) {
-                raceWinner += car.getName();
-                return;
+    // 승자를 최종 우승자에 저장하는 메서드
+    public void getMaxPosition(){
+        for(Car i:dataUtils.getParticipantArr()){
+            if(i.getPosition()>maxPosition){
+                maxPosition=i.getPosition();
             }
-            raceWinner+=(", "+car.getName());
+        }
+    }
+    public void getWinner(){
+        for(Car i:dataUtils.getParticipantArr()){
+            if(i.getPosition()==maxPosition){
+                whoIsWinner(i);
+            }
+        }
+    }
+    public void whoIsWinner(Car car){
+        if(raceWinner.equals("")){
+            raceWinner+=car.getName();
             return;
         }
-        return;
+        raceWinner+=(", "+car.getName());
     }
 }
+
