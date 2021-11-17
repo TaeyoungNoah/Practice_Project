@@ -4,7 +4,10 @@ import subway.controller.LineManagement;
 import subway.controller.PrintAllLines;
 import subway.controller.SectionManagement;
 import subway.controller.StationManagement;
+import subway.model.Line;
+import subway.model.LineRepository;
 import subway.model.Station;
+import subway.model.StationRepository;
 
 import java.util.Scanner;
 
@@ -23,14 +26,23 @@ public class Process {
         System.out.println("4. 지하철 노선도 출력");
         System.out.println("Q. 종료");
         System.out.println("");
-        selectMenu(getUserInputUI());
+        getUserInputUI();
     }
+    // 기본 노선 & 역 저장
+    public void initializeLineAndStation(){
+        String[] initializeStationArr = {"교대역","강남역","역삼역","남부터미널역","양재역","양재시민의숲역","매봉역"};
+        for(String i : initializeStationArr){
+            Station station=new Station(i);
+            StationRepository.addStation(station);
+        }
+    }
+
     // 사용자의 입력을 유도하는 UI
-    public String getUserInputUI() {
+    public void getUserInputUI() {
         String userInput;
         System.out.println("## 원하는 기능을 선택하세요.");
         userInput = scanner.next();
-        return userInput;
+        selectMenu(userInput);
     }
 
     public void selectMenu(String userInput){
@@ -55,29 +67,30 @@ public class Process {
             return;
         }
         System.out.println("[ERROR] 선택할 수 없는 기능입니다.");
+        System.out.println("");
         getUserInputUI();
     }
     // 1. 역 관리 메서드
     public void stationManagementUI(){
-        StationManagement.initialize();
+        new StationManagement(scanner).initialize();
         initialize();
     }
 
     // 2. 노선 관리 메서드
     public void lineManagementUI(){
-        LineManagement.initialize();
+        new LineManagement(scanner).initialize();
         initialize();
     }
 
     // 3. 구간 관리 메서드
     public void sectionManagementUI(){
-        SectionManagement.initialize();
+        new SectionManagement(scanner).initialize();
         initialize();
     }
 
     // 4. 지하철 노선도 출력
     public void printAllLinesUI(){
-
+        new PrintAllLines(scanner).printAll();
         initialize();
     }
 }
