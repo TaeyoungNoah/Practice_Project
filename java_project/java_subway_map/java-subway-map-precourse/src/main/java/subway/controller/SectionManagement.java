@@ -1,5 +1,12 @@
 package subway.controller;
 
+import subway.model.Line;
+import subway.model.LineRepository;
+import subway.model.Station;
+import subway.model.StationRepository;
+import subway.view.ProcessProgram;
+
+import java.util.List;
 import java.util.Scanner;
 
 public class SectionManagement {
@@ -25,7 +32,7 @@ public class SectionManagement {
 
     public void selectMenuSection(String userInput){
         if(userInput.equals("1")){
-            addSection();
+            getUserAddSectionLine();
             return;
         }
         if(userInput.equals("2")){
@@ -40,11 +47,54 @@ public class SectionManagement {
         System.out.println("");
         getUserInputSection();
     }
-    // 1. 역 등록
-    public void addSection(){
-        System.out.println("1");
+
+    // 1. 구간 등록 (등록할 구간의 정보를 사용자로부터 입력받는 메서드)
+    public void getUserAddSectionLine(){
+        String userInputLine;
+        System.out.println("## 등록할 노선을 입력하시오.");
+        userInputLine = scanner.next();
+        if(checkUserInputValidLine(userInputLine)){
+            getUserAddSectionStation(userInputLine);
+            return;
+        }
+        System.out.println("[ERROR] 존재하지 않는 노선입니다.");
+        System.out.println("");
+        initialize();
     }
-    // 2. 역 삭제
+    public void getUserAddSectionStation(String userInputLine) {
+        String userInputStation;
+        Line forStationLine = LineRepository.getLine(userInputLine);
+        System.out.println("## 등록할 역을 입력하시오.");
+        userInputStation = scanner.next();
+        if (checkUserInputValidStation(userInputLine,forStationLine)) {
+
+            return;
+        }
+        System.out.println("[ERROR] 이미 등록되어있는 역입니다.");
+        System.out.println("");
+        initialize();
+    }
+    // 1. 구간 등록 (사용자가 입력한 노선이 있는 노선인지 체크하는 메서드)
+    private boolean checkUserInputValidLine(String userInputLine) {
+        List<Line> listLine = LineRepository.lines();
+        for (Line i : listLine) {
+            if (i.getName().equals(userInputLine)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    // 1. 역 등록 (사용자가 입력한 역의 중복을 체크하는 메서드)
+    private boolean checkUserInputValidStation(String userInput,Line userInputLine){
+        List<Station> stationListInLine= Line.stations();
+        for(Station i : stationListInLine){
+            if(i.getName().equals(userInput)){
+                return false;
+            }
+        }
+        return true;
+    }
+    // 2. 구간 삭제
     public void delSection(){
         System.out.println("2");
     }

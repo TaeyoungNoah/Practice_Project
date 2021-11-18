@@ -8,13 +8,12 @@ import subway.model.Line;
 import subway.model.LineRepository;
 import subway.model.Station;
 import subway.model.StationRepository;
-
 import java.util.Scanner;
 
-public class Process {
+public class ProcessProgram {
     public Scanner scanner;
 
-    Process(Scanner scanner){
+    public ProcessProgram(Scanner scanner){
         this.scanner=scanner;
     }
     // 초기화면
@@ -29,11 +28,19 @@ public class Process {
         getUserInputUI();
     }
     // 기본 노선 & 역 저장
-    public void initializeLineAndStation(){
+    public void initializeStation(){
         String[] initializeStationArr = {"교대역","강남역","역삼역","남부터미널역","양재역","양재시민의숲역","매봉역"};
         for(String i : initializeStationArr){
             Station station=new Station(i);
             StationRepository.addStation(station);
+        }
+    }
+    // 기본 노선 저장
+    public void initializeLine(){
+        String[] initializeLineArr = {"2호선","3호선","신분당선"};
+        for(String i : initializeLineArr) {
+            Line line = new Line(i);
+            LineRepository.addLine(line);
         }
     }
 
@@ -64,7 +71,7 @@ public class Process {
         }
         if(userInput.equals("Q")){
             System.out.println("[INFO] 프로그램을 종료합니다.");
-            return;
+            System.exit(0);
         }
         System.out.println("[ERROR] 선택할 수 없는 기능입니다.");
         System.out.println("");
