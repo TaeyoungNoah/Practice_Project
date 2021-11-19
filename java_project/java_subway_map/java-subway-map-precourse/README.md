@@ -26,3 +26,11 @@
 
 
 
+**<아이디어>**
+
+1. Line을 ArrayList가 아니라 Map 으로 관리하면 더 좋지 않을까?
+
+```java
+Map<Line,Station[]> = new new HashMap<Line,Station[]>(); 
+```
+
