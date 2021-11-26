@@ -29,7 +29,6 @@ public class MemberService {
 //        command+T 하고 extract method 누르면 됨
 
         validateDuplicateMember(member);  // 중복 회원 검증
-
         memberRepository.save(member);
         return member.getId();
     }
