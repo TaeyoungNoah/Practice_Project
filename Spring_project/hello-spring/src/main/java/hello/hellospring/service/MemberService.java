@@ -2,11 +2,11 @@ package hello.hellospring.service;
 
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
-import hello.hellospring.repository.MemoryMemberRepository;
 
 import java.util.List;
 import java.util.Optional;
 
+//@Service // MemberController에서 Autowired를 하기 위해선 스프링 컨테이너가 만들어질 때 얘가 바로 생성이 되어야함. 그래서 이렇게 적어주면 됨
 public class MemberService {
     //private final MemberRepository memberRepository = new MemoryMemberRepository(); 대신에
     private final MemberRepository memberRepository;
@@ -35,8 +35,8 @@ public class MemberService {
     }
 
     private void validateDuplicateMember(Member member) {
-        memberRepository.findByname(member.getName())
-                .ifPresent(m -> {
+        memberRepository.findByName(member.getName())
+                .ifPresent((Member m) -> {
                     throw new IllegalStateException("이미 존재하는 회원입니다.");
                 });
     }
