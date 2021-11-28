@@ -2,22 +2,43 @@ package TodoList.TodoListspring.repository;
 
 import TodoList.TodoListspring.domain.Todo;
 
-import java.util.List;
+import java.util.*;
 
 public class MemoryTodoRepository implements TodoRepository{
+    private static Map<Long, Todo> store = new HashMap<>();
+    private static long sequence = 0L;
 
     @Override
     public Todo addTodo(Todo todo) {
-        return null;
+        todo.setId(++sequence);
+        store.put(todo.getId(), todo);
+        return todo;
     }
 
     @Override
-    public Todo delTodo(Todo todo) {
-        return null;
+    public void delTodo(String task) {
+        Optional<Todo> todo = findByTask(task);
+        store.remove(todo.get().getId());
+    }
+
+    @Override
+    public Optional<Todo> findByTask(String task) {
+        return store.values().stream()
+                .filter(todo -> todo.getTask().equals(task))
+                .findAny();
+    }
+
+    @Override
+    public Optional<Todo> findById(Long id) {
+        return Optional.ofNullable(store.get(id));
     }
 
     @Override
     public List<Todo> fullCheck() {
-        return null;
+        return new ArrayList<>(store.values());
+    }
+
+    public void clearStore(){
+        store.clear();
     }
 }

@@ -1,17 +1,29 @@
 package TodoList.TodoListspring.domain;
 
 public class Todo {
-    private String todoSomething;
+    private Long id;
+    private String task;
     private String deadLine;
 
-    public String getTodoSomething() {
-        return todoSomething;
+    // id의 Getter&Setter
+    public Long getId() {
+        return id;
     }
 
-    public void setTodoSomething(String todoSomething) {
-        this.todoSomething = todoSomething;
+    public void setId(Long id) {
+        this.id = id;
     }
 
+    // task의 Getter&Setter
+    public String getTask() {
+        return task;
+    }
+
+    public void setTask(String task) {
+        this.task = task;
+    }
+
+    // deadLine의 Getter&Setter
     public String getDeadLine() {
         return deadLine;
     }

@@ -8,6 +8,10 @@
 
 
 
+
+
+
+
 ### Spring_project_Lecture
 
 > 인프런 김영한 - 스프링입문 강의
@@ -18,15 +22,19 @@ https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8-%
 
 
 
+
+
+
+
 ### Spring_project_Todo
 
 > 강의를 통해 배운걸 복습하며 간단한 TodoList 만들기
 
-- 기능
+#### 기능
 
-  - 홈 화면에서 `일정 추가` or `일정 확인` 두가지 작업을 할 수 있다.
+- 홈 화면에서 `일정 추가` or `일정 확인` 두가지 작업을 할 수 있다.
 
-    > 일정 추가시, 동일한 이름의 일정은 등록할 수 없다
+  > 일정 추가시, 동일한 이름의 일정은 등록할 수 없다
 
 - 일정 추가
 
@@ -35,4 +43,22 @@ https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8-%
 - 일정 확인
 
   - 지금까지 등록한 일정을 확인할 수 있다.
+
   - 등록한 일정을 삭제할 수 있다.
+
+    > 존재하지 않는 일정은 삭제할 수 없다.
+
+
+
+#### 개발 계획
+
+- 아직 DB를 이용하는 방법에 익숙치 않으므로 메모리를 이용해 기능을 모두 구현한 뒤 DB에 연결하는 방식으로 설계 
+
+
+
+#### Commit
+
+1. Build_basic_Structure
+
+   > Controller, Service, Repository, Domain 구조를 기본적으로 만듦
+
