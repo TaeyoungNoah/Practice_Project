@@ -62,3 +62,10 @@ https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8-%
 
    > Controller, Service, Repository, Domain 구조를 기본적으로 만듦
 
+2. domain, repository 기능구현&테스트
+
+   > 계획에서 말했듯이 우선 메모리 repository에 데이터를 저장하고 관리하는 구조 설계 후 테스트 완료
+
+3. service 기능구현&테스트
+
+   > 일정 추가 (중복 일정 추가에 대한 예외 처리), 일정 삭제 (없는 일정 삭제에 대한 예외 처리), 전체 일정 확인 구조 설계 후 테스트 완료
