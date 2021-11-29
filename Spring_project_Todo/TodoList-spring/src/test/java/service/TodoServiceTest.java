@@ -116,10 +116,10 @@ public class TodoServiceTest {
         todo1.setDeadLine("내일");
 
         Todo todo2 = new Todo();
-
-        //when
         todo2.setTask("오늘하자");
         todo2.setDeadLine("오늘");
+
+        //when
         todoService.addTodoService(todo1);
         todoService.addTodoService(todo2);
         List<Todo> resultCheck = todoService.fullCheckService();
