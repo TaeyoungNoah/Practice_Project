@@ -2,6 +2,7 @@ package TodoList.TodoListspring.service;
 
 import TodoList.TodoListspring.domain.Todo;
 import TodoList.TodoListspring.repository.MemoryTodoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,7 +10,12 @@ import java.util.Optional;
 
 @Service
 public class TodoService {
-    private final MemoryTodoRepository memoryTodoRepository = new MemoryTodoRepository();
+    private final MemoryTodoRepository memoryTodoRepository;
+
+    @Autowired
+    public TodoService(MemoryTodoRepository memoryTodoRepository) {
+        this.memoryTodoRepository = memoryTodoRepository;
+    }
 
     // 새로운 일정을 등록하는 메서드
     public Long addTodoService(Todo todo){

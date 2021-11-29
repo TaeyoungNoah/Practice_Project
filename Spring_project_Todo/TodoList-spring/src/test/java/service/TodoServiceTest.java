@@ -19,7 +19,7 @@ public class TodoServiceTest {
     @BeforeEach
     public void beforeEach(){
         memoryTodoRepository = new MemoryTodoRepository();
-        todoService = new TodoService();
+        todoService = new TodoService(memoryTodoRepository);
     }
 
     @AfterEach

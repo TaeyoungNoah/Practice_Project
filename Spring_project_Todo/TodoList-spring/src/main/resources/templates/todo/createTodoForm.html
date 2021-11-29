@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<div class="container">
+    <form action="/todo/new" method="post">
+        <div class="form-group">
+            <label for="task">Task</label>
+            <input type="text" id="task" name="task" placeholder="Input Task">
+            <label for="deadLine">Deadline</label>
+            <input type="text" id="deadLine" name="deadLine" placeholder="Input Deadline">
+        </div>
+        <button type="submit">등록</button>
+    </form>
+</div> <!-- /container -->
+
+</body>
+</html>

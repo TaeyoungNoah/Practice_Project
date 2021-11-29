@@ -1,9 +1,11 @@
 package TodoList.TodoListspring.repository;
 
 import TodoList.TodoListspring.domain.Todo;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
+@Repository
 public class MemoryTodoRepository implements TodoRepository{
     private static Map<Long, Todo> store = new HashMap<>();
     private static long sequence = 0L;
