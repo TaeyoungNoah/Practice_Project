@@ -3,21 +3,15 @@ package TodoList.TodoListspring.service;
 import TodoList.TodoListspring.domain.Todo;
 import TodoList.TodoListspring.repository.MemoryTodoRepository;
 import TodoList.TodoListspring.repository.TodoRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
-@Transactional
+@Service
 public class TodoService {
-    private final TodoRepository todoRepository;
+    private final TodoRepository todoRepository = new MemoryTodoRepository();
 
-    @Autowired
-    public TodoService(TodoRepository todoRepository) {
-        this.todoRepository = todoRepository;
-    }
 
     // 새로운 일정을 등록하는 메서드
     public Long addTodoService(Todo todo){

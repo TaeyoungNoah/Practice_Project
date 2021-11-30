@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
-//@Repository
+@Repository
 public class MemoryTodoRepository implements TodoRepository{
     private static Map<Long, Todo> store = new HashMap<>();
     private static long sequence = 0L;
