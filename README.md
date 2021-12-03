@@ -14,6 +14,8 @@
 
 진행률: 100% 완강🥳 (다음은 스프링 웹 MVC)
 
+> 유료강의이기 때문에 'Lecture' Repository에 Private로 기록
+
 https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8-%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8/dashboard
 
 
@@ -24,3 +26,12 @@ https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8-%
 
 > 강의를 통해 배운걸 복습하며 간단한 TodoList 만들기
 
+
+
+### Spring_MVC_Lecture
+
+> 인프런 김영한 - 스프링MVC (1편)
+
+진행률: %
+
+https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-1/dashboard
