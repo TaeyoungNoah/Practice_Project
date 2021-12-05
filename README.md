@@ -14,8 +14,6 @@
 
 진행률: 100% 완강🥳 (다음은 스프링 웹 MVC)
 
-> 유료강의이기 때문에 'Lecture' Repository에 Private로 기록
-
 https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8-%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8/dashboard
 
 
@@ -28,10 +26,14 @@ https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8-%
 
 
 
+
+
 ### Spring_MVC_Lecture
 
 > 인프런 김영한 - 스프링MVC (1편)
+>
+> 유료강의이기 때문에 'Lecture' Repository에 Private로 기록
 
-진행률: %
+진행률: 50%
 
 https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-1/dashboard
