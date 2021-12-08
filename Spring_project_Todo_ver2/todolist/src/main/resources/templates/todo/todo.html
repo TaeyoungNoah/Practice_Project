@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <link th:href="@{/css/bootstrap.min.css}"
+        href="../css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .container {
+      max-width: 560px;
+    }
+  </style>
+</head>
+
+<body>
+<div class="container">
+  <div class="py-5 text-center">
+    <h2>Todo 상세</h2>
+  </div>
+
+
+  <div>
+    <label for="task">Task</label>
+    <input type="text" id="task" name="task" class="form-control" value="할 일" th:value="${todo.task}"readonly>
+  </div>
+  <div>
+    <label for="startDate">StartDate</label>
+    <input type="text" id="startDate" name="startDate" class="form-control" value="YYYYMMDD" th:value="${todo.startDate}" readonly>
+  </div>
+  <div>
+    <label for="deadLine">DeadLine</label>
+    <input type="text" id="deadLine" name="deadLine" class="form-control" value="YYYYMMDD" th:value="${todo.deadLine}" readonly>
+  </div>
+  <div>
+    <label for="quantity">Finished?</label>
+    <input type="text" id="quantity" name="quantity" class="form-control" value="10" th:value="${todo.finish}" readonly>
+  </div>
+  <hr class="my-4">
+  <div class="row">
+    <div class="col">
+      <button class="w-100 btn btn-primary btn-lg" onclick="location.href='editForm.html'"
+              th:onclick="|location.href='@{/todo/todos/{todoId}/edit(todoId=${todo.Id})}'|" type="button">일정 수정</button>
+    </div>
+    <div class="col">
+      <button class="w-100 btn btn-primary btn-lg" onclick="location.href='editForm.html'"
+              th:onclick="|location.href='@{/todo/todos/{todoId}/delete(todoId=${todo.Id})}'|" type="button">일정 삭제</button>
+    </div>
+    <div class="col">
+      <button class="w-100 btn btn-secondary btn-lg" onclick="location.href='items.html'"
+              th:onclick="|location.href='@{/todo/todos}'|"type="button">목록</button>
+    </div>
+  </div>
+</div> <!-- /container -->
+</body>
+</html>

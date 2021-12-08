@@ -20,7 +20,7 @@ https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8-%
 
 
 
-### Spring_project_Todo
+### Spring_project_Todo_ver1
 
 > 강의를 통해 배운걸 복습하며 간단한 TodoList 만들기
 
@@ -34,6 +34,12 @@ https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8-%
 >
 > 유료강의이기 때문에 'Lecture' Repository에 Private로 기록
 
-진행률: 50%
+진행률: 100% 완강🥳 
 
 https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-1/dashboard
+
+
+
+### Spring_project_Todo_ver2
+
+> 스프링 MVC강의를 모두 듣고 더 개선된 TodoList 만들기

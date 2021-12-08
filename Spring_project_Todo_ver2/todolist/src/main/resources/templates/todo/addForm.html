@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <link th:href="@{/css/bootstrap.min.css}"
+        href="../css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .container {
+      max-width: 560px;
+    } </style>
+</head>
+<body>
+<div class="container">
+  <div class="py-5 text-center">
+    <h2>일정 추가하기</h2>
+  </div>
+  <h4 class="mb-3">추가</h4>
+  <form action="item.html" th:action="@{/todo/todos/add}" method="post">
+    <div>
+      <label for="task">Task</label>
+      <input type="text" id="task" name="task" class="form-control" placeholder="해야 할 일은?">
+    </div>
+    <div>
+      <label for="startDate">StartDate</label>
+      <input type="text" id="startDate" name="startDate" class="form-control" placeholder="언제부터 (YYYYMMDD)">
+    </div>
+    <div>
+      <label for="deadLine">DeadLine</label>
+      <input type="text" id="deadLine" name="deadLine" class="form-control" placeholder="언제까지 (YYYYMMDD)">
+    </div>
+    <hr class="my-4">
+    <div class="row">
+      <div class="col">
+        <button class="w-100 btn btn-primary btn-lg" type="submit">추가</button>
+      </div>
+      <div class="col">
+        <button class="w-100 btn btn-secondary btn-lg" onclick="location.href='items.html'"
+                th:onclick="|location.href='@{/todo/todos}'|" type="button">취소</button>
+      </div>
+    </div>
+</form>
+</div> <!-- /container -->
+</body>
+</html>

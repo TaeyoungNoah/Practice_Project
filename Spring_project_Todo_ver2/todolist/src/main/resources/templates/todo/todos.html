@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <link th:href="@{/css/bootstrap.min.css}"
+        href="../css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container" style="max-width: 600px">
+  <div class="py-5 text-center">
+    <h2>TODOLIST</h2> </div>
+  <div class="row">
+    <div class="col">
+      <button class="btn btn-primary float-end"
+              onclick="location.href='addForm.html'"
+              th:onclick="|location.href='@{/todo/todos/add}'|"
+              type="button">TODO 등록</button>
+    </div>
+  </div>
+  <hr class="my-4">
+  <div>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Task</th>
+        <th>Start Date</th>
+        <th>DeadLine</th>
+        <th>Finish?</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr th:each="todo : ${todos}">
+        <td><a href="todo.html" th:href="@{/todo/todos/{todoId}(todoId=${todo.id})}" th:text="${todo.task}">Task</a></td>
+        <td th:text="${todo.startDate}" >StartDate</td>
+        <td th:text="${todo.deadLine}">DeadLine</td>
+        <td th:if="!${todo.finish}">X</td>
+        <td th:if="${todo.finish}">O</td>
+        <td><button class="w-70 btn btn-primary btn-lg" onclick="location.href='editForm.html'"
+                    th:onclick="|location.href='@{/todo/todos/{todoId}/finish(todoId=${todo.Id})}'|" type="button">Done!</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div> <!-- /container -->
+</body>
+</html>
