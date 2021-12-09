@@ -2,10 +2,7 @@ package spring.todolist.domain;
 
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Repository
 public class TodoRepository {
@@ -22,6 +19,13 @@ public class TodoRepository {
     // 아이디값으로 일정 찾기
     public Todo findById(Long todoId){
         return store.get(todoId);
+    }
+
+    // task값으로 일정 찾기
+    public Optional<Todo> findByTask(String task){
+        return store.values().stream()
+                    .filter(todo -> todo.getTask().equals(task))
+                    .findAny();
     }
 
     // 전체 일정 조회
