@@ -1,6 +1,10 @@
-### java-project 
+### java_project _woowacourse
 
 >  2020 우테코 프리코스 문제 혼자 풀어보기 
+
+### spring_project_woowacourse
+
+> 이전에 자바로 풀었던 우테코 프리코스 문제를 스프링을 이용해 풀어보자
 
 - java-baseball-precourse https://github.com/woowacourse/java-baseball-precourse (기능 구현 완료, 구조나 효율성 측면 개선 필요..)
 - java-racingcar-precourse https://github.com/woowacourse/java-racingcar-precourse (기능 구현 완료, 구조나 효율성 측면 개선 필요..)
@@ -43,3 +47,6 @@ https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-1/dashboard
 ### Spring_project_Todo_ver2
 
 > 스프링 MVC강의를 모두 듣고 더 개선된 TodoList 만들기
+
+
+
