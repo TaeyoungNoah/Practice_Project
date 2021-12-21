@@ -7,7 +7,11 @@
 > 이전에 자바로 풀었던 우테코 프리코스 문제를 스프링을 이용해 풀어보자
 
 - java-baseball-precourse https://github.com/woowacourse/java-baseball-precourse (기능 구현 완료, 구조나 효율성 측면 개선 필요..)
+
+  > NEXT-STEP TDD과정 통해 다시 도전중
+
 - java-racingcar-precourse https://github.com/woowacourse/java-racingcar-precourse (기능 구현 완료, 구조나 효율성 측면 개선 필요..)
+
 - java-subway-map-precourse https://github.com/woowacourse/java-subway-map-precourse (기능 구현 실패, 구조 짜는 부분에서 부족함 느껴 조금 더 공부 후 재도전)
 
 
@@ -46,7 +50,7 @@ https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-1/dashboard
 
 ### Spring_project_Todo_ver2
 
-> 스프링 MVC강의를 모두 듣고 더 개선된 TodoList 만들기
+> 스프링 MVC1편 강의를 모두 듣고 더 개선된 TodoList 만들기
 
 
 

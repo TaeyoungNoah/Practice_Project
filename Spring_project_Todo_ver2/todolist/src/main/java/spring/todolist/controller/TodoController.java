@@ -6,6 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import spring.todolist.domain.Todo;
+import spring.todolist.domain.task.State;
+import spring.todolist.domain.task.TaskType;
 import spring.todolist.service.TodoService;
 
 import javax.annotation.PostConstruct;
@@ -19,6 +21,18 @@ public class TodoController {
     @Autowired
     public TodoController(TodoService todoService) {
         this.todoService = todoService;
+    }
+
+    // 상태관련 Enum
+    @ModelAttribute("states")
+    public State[] states() {
+        return State.values();
+    }
+
+    // 일의 타입
+    @ModelAttribute("taskTypes")
+    public TaskType[] taskTypes() {
+        return TaskType.values();
     }
 
     // 전체일정 확인
