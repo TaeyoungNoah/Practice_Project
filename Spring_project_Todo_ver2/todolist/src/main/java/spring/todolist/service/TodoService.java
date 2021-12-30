@@ -2,6 +2,7 @@ package spring.todolist.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import spring.todolist.domain.JdbcRepository;
 import spring.todolist.domain.Todo;
 import spring.todolist.domain.TodoRepository;
 
@@ -12,7 +13,7 @@ import java.util.Optional;
 public class TodoService {
     private TodoRepository todoRepository;
     @Autowired
-    public TodoService(TodoRepository todoRepository) {
+    public TodoService(TodoRepository todoRepository, JdbcRepository jdbcRepository) {
         this.todoRepository = todoRepository;
     }
 
@@ -39,12 +40,6 @@ public class TodoService {
     // 전체조회
     public List<Todo> findAllTodo(){
         return todoRepository.findAll();
-    }
-
-    // 완료하기
-    public void finishTodo(Long todoId){
-        Todo todo = todoRepository.findById(todoId);
-        todo.setFinish(true);
     }
 
     // findOne

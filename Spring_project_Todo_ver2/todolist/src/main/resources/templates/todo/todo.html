@@ -17,7 +17,6 @@
     <h2>Todo 상세</h2>
   </div>
 
-
   <div>
     <label for="task">Task</label>
     <input type="text" id="task" name="task" class="form-control" value="할 일" th:value="${todo.task}"readonly>
@@ -30,10 +29,21 @@
     <label for="deadLine">DeadLine</label>
     <input type="text" id="deadLine" name="deadLine" class="form-control" value="YYYYMMDD" th:value="${todo.deadLine}" readonly>
   </div>
+  <hr class="my-4">
   <div>
-    <label for="quantity">Finished?</label>
-    <input type="text" id="quantity" name="quantity" class="form-control" value="10" th:value="${todo.finish}" readonly>
+    <div th:each="type : ${taskTypes}" class="form-check form-check-inline">
+      <input type="radio" th:field="${todo.taskType}" th:value="${type.name()}" class="form-check-input" disabled>
+      <label th:for="${#ids.prev('taskType')}" th:text="${type.description}" class="form-check-label">BOOK</label>
+    </div>
   </div>
+  <hr class="my-4">
+  <div>
+    <div th:each="state : ${states}" class="form-check form-check-inline">
+      <input type="radio" th:field="${todo.state}" th:value="${state.name()}" class="form-check-input" disabled>
+      <label th:for="${#ids.prev('state')}" th:text="${state.description}" class="form-check-label">ONGOING</label>
+    </div>
+  </div>
+
   <hr class="my-4">
   <div class="row">
     <div class="col">

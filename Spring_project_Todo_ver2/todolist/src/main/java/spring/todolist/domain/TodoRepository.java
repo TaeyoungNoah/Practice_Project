@@ -39,6 +39,8 @@ public class TodoRepository {
         findTodo.setTask(reviseParam.getTask());
         findTodo.setStartDate(reviseParam.getStartDate());
         findTodo.setDeadLine(reviseParam.getDeadLine());
+        findTodo.setState(reviseParam.getState());
+        findTodo.setTaskType(reviseParam.getTaskType());
     }
 
     // 일정 삭제하기

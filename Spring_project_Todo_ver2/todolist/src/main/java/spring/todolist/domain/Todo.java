@@ -2,6 +2,8 @@ package spring.todolist.domain;
 
 import lombok.Getter;
 import lombok.Setter;
+import spring.todolist.domain.task.State;
+import spring.todolist.domain.task.TaskType;
 
 @Getter @Setter
 public class Todo {
@@ -9,8 +11,9 @@ public class Todo {
     private String task;
     private String startDate;
     private String deadLine;
-    private boolean finish=false;
-
+    private State state = State.ONGOING;
+    private TaskType taskType;
+    public Todo() {}
     public Todo(String task, String startDate, String deadLine) {
         this.task = task;
         this.startDate = startDate;

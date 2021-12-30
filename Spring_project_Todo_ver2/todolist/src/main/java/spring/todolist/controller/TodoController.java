@@ -29,7 +29,7 @@ public class TodoController {
         return State.values();
     }
 
-    // 일의 타입
+    // 일의 타입 Enum
     @ModelAttribute("taskTypes")
     public TaskType[] taskTypes() {
         return TaskType.values();
@@ -54,6 +54,7 @@ public class TodoController {
     // 일정 추가 폼 열기
     @GetMapping("/todo/todos/add")
     public String addForm(Model model){
+        model.addAttribute("todo",new Todo());
         return "todo/addForm";
     }
 
@@ -100,13 +101,6 @@ public class TodoController {
         return "redirect:/todo/todos";
     }
 
-    // 일정 완료 여부 바꾸기
-    @GetMapping("/todo/todos/{todoId}/finish")
-    public String finish(@PathVariable Long todoId, Model model){
-        Todo todo = todoService.findOne(todoId);
-        todo.setFinish(true);
-        return "redirect:/todo/todos";
-    }
 
     // 에러페이지 맵핑
     @GetMapping("/todo/todos/error")

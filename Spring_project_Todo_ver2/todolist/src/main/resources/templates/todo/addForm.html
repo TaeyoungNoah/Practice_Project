@@ -15,19 +15,34 @@
     <h2>일정 추가하기</h2>
   </div>
   <h4 class="mb-3">추가</h4>
-  <form action="item.html" th:action="@{/todo/todos/add}" method="post">
+  <form action="item.html" th:action="@{/todo/todos/add}" th:object="${todo}" method="post">
     <div>
       <label for="task">Task</label>
-      <input type="text" id="task" name="task" class="form-control" placeholder="해야 할 일은?">
+      <input type="text" id="task" th:field="*{task}" class="form-control" placeholder="해야 할 일은?">
     </div>
     <div>
       <label for="startDate">StartDate</label>
-      <input type="text" id="startDate" name="startDate" class="form-control" placeholder="언제부터 (YYYYMMDD)">
+      <input type="text" id="startDate" th:field="*{startDate}" class="form-control" placeholder="언제부터 (YYYYMMDD)">
     </div>
     <div>
       <label for="deadLine">DeadLine</label>
-      <input type="text" id="deadLine" name="deadLine" class="form-control" placeholder="언제까지 (YYYYMMDD)">
+      <input type="text" id="deadLine" th:field="*{deadLine}" class="form-control" placeholder="언제까지 (YYYYMMDD)">
     </div>
+
+    <hr class="my-4">
+
+    <div>
+      <div>Category</div>
+      <div th:each="type : ${taskTypes}" class="form-check form-check-inline">
+        <input type="radio" th:field="*{taskType}" th:value="${type.name()}" class="form-check-input">
+        <label th:for="${#ids.prev('taskType')}" th:text="${type.description}" class="form-check-label">BOOK</label>
+      </div>
+    </div>
+
+
+
+
+
     <hr class="my-4">
     <div class="row">
       <div class="col">

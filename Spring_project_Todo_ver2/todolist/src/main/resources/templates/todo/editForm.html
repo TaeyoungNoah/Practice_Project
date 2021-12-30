@@ -16,19 +16,38 @@
   <div class="py-5 text-center">
     <h2>TODO 수정하기</h2>
   </div>
-  <h4 class="mb-3">수정</h4>
-  <form action="item.html" th:action method="post">
+  <form action="item.html" th:action th:object="${todo}" method="post">
     <div>
       <label for="task">Task</label>
-      <input type="text" id="task" name="task" class="form-control" value="할 일" th:value="${todo.task}" readonly>
+      <input type="text" id="task" name="task" class="form-control" value="할 일" th:field="*{task}" readonly>
     </div>
     <div>
       <label for="startDate">StartDate</label>
-      <input type="text" id="startDate" name="startDate" class="form-control"  value="YYYYMMDD" th:value="${todo.startDate}">
+      <input type="text" id="startDate" name="startDate" class="form-control"  value="YYYYMMDD" th:field="*{startDate}">
     </div>
     <div>
       <label for="deadLine">DeadLine</label>
-      <input type="text" id="deadLine" name="deadLine" class="form-control" value="YYYYMMDD" th:value="${todo.deadLine}">
+      <input type="text" id="deadLine" name="deadLine" class="form-control" value="YYYYMMDD" th:field="*{deadLine}">
+    </div>
+
+    <hr class="my-4">
+
+    <div>
+      <div>Category</div>
+      <div th:each="type : ${taskTypes}" class="form-check form-check-inline">
+        <input type="radio" th:field="*{taskType}" th:value="${type.name()}" class="form-check-input">
+        <label th:for="${#ids.prev('taskType')}" th:text="${type.description}" class="form-check-label">WORK</label>
+      </div>
+    </div>
+
+    <hr class="my-4">
+
+    <div>
+      <div>Done?</div>
+      <div th:each="state : ${states}" class="form-check form-check-inline">
+        <input type="radio" th:field="*{state}" th:value="${state.name()}" class="form-check-input">
+        <label th:for="${#ids.prev('state')}" th:text="${state.description}" class="form-check-label">ONGOING</label>
+      </div>
     </div>
 
     <hr class="my-4">

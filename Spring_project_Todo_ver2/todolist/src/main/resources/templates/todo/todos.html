@@ -25,7 +25,8 @@
         <th>Task</th>
         <th>Start Date</th>
         <th>DeadLine</th>
-        <th>Finish?</th>
+        <th>Category</th>
+        <th>Done?</th>
       </tr>
       </thead>
 
@@ -34,10 +35,11 @@
         <td><a href="todo.html" th:href="@{/todo/todos/{todoId}(todoId=${todo.id})}" th:text="${todo.task}">Task</a></td>
         <td th:text="${todo.startDate}" >StartDate</td>
         <td th:text="${todo.deadLine}">DeadLine</td>
-        <td th:if="!${todo.finish}">X</td>
-        <td th:if="${todo.finish}">O</td>
-        <td><button class="w-70 btn btn-primary btn-lg" onclick="location.href='editForm.html'"
-                    th:onclick="|location.href='@{/todo/todos/{todoId}/finish(todoId=${todo.Id})}'|" type="button">Done!</button></td>
+        <td th:text="${todo.getTaskType()}">Category</td>
+        <td>
+          <span th:if="${todo.getState().getDescription().equals('완료')}">🥳   Done!   🥳</span>
+          <span th:if="${todo.getState().getDescription().equals('진행중')}">🤔 Ongoing,, 🤔</span>
+        </td>
       </tr>
       </tbody>
     </table>
