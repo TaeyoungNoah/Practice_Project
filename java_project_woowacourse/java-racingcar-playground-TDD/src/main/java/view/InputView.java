@@ -24,4 +24,12 @@ public class InputView {
         String userInputRaw = scanner.next();
         return Integer.parseInt(userInputRaw);
     }
+
+    public void checkValidTryTimes(String userInputRaw) {
+        try{
+            Integer.parseInt(userInputRaw);
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException("[ERROR] 시도 횟수를 숫자로 입력하세요.");
+        }
+    }
 }

@@ -9,6 +9,10 @@ public class CarPosition {
         this.positionInt = positionInt;
     }
 
+    public int getPositionInt() {
+        return positionInt;
+    }
+
     public String movePosition(int randomNum) {
         final int MOVE_FLAG=4;
         if (randomNum>=MOVE_FLAG) {

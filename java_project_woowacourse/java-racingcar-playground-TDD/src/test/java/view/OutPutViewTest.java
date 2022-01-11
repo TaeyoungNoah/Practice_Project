@@ -3,6 +3,10 @@ package view;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class OutPutViewTest {
 
     OutputView outputView = new OutputView();
@@ -22,7 +26,7 @@ public class OutPutViewTest {
     @Test
     void 우승자출력() {
         // given
-        String[] winners = {"mon", "tue"};
+        List<String> winners = new ArrayList<>(Arrays.asList("mon", "tue"));
         // when
         String result = outputView.makeWinnersString(winners);
         String answer = "mon, tue가 최종 우승했습니다.";
