@@ -22,12 +22,12 @@ public class InputView {
     public static int getUserInputTryTimes() {
         System.out.println("시도할 회수는 몇회인가요?");
         String userInputRaw = scanner.next();
-        return Integer.parseInt(userInputRaw);
+        return checkValidTryTimes(userInputRaw);
     }
 
-    public static void checkValidTryTimes(String userInputRaw) {
-        try{
-            Integer.parseInt(userInputRaw);
+    public static int checkValidTryTimes(String userInputRaw) {
+        try {
+            return Integer.parseInt(userInputRaw);
         } catch (NumberFormatException e) {
             throw new IllegalArgumentException("[ERROR] 시도 횟수를 숫자로 입력하세요.");
         }

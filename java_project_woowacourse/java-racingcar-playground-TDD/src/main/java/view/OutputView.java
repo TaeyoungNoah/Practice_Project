@@ -5,11 +5,11 @@ import java.util.List;
 public class OutputView {
 
     // 1회당 1대의 위차값 출력할 String
-    public String makeOneTryPositionString(String carName, String carPosition) {
+    public static String makeOneTryPositionString(String carName, String carPosition) {
         return carName + " : " + carPosition;
     }
 
-    public String makeWinnersString(List<String> winners) {
+    public static String makeWinnersString(List<String> winners) {
         String result = "";
         int maxIndex = winners.size()-1;
         for (int i = 0; i < maxIndex; i++) {

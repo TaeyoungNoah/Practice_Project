@@ -14,4 +14,12 @@ public class Garage {
     public List<String> getWinners() {
         return cars.getWinnersStringArr();
     }
+
+    public Cars getCars() {
+        return cars;
+    }
+
+    public int getTryTimes() {
+        return tryTimes;
+    }
 }

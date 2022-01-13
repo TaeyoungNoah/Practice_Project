@@ -17,6 +17,7 @@ public class CarPosition {
         final int MOVE_FLAG=4;
         if (randomNum>=MOVE_FLAG) {
             this.positionString+="-";
+            this.positionInt++;
         }
         return this.positionString;
     }
